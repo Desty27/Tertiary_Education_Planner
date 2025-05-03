@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Learning - EdPsych Connect</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <style>
+        .immersive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .immersive-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .immersive-header h1 {
+            color: #4a6cf7;
+            margin-bottom: 10px;
+        }
+
+        .immersive-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .immersive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .immersive-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .immersive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .immersive-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .immersive-card-content {
+            padding: 20px;
+        }
+
+        .immersive-card-content h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .immersive-card-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .immersive-card-content .btn {
+            display: inline-block;
+            background-color: #4a6cf7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .immersive-card-content .btn:hover {
+            background-color: #3a5ce7;
+        }
+
+        .immersive-viewer {
+            margin-top: 40px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .immersive-viewer h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        #viewer-container {
+            width: 100%;
+            height: 500px;
+            background-color: #000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .immersive-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .immersive-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .immersive-tab.active {
+            border-bottom-color: #4a6cf7;
+            color: #4a6cf7;
+            font-weight: bold;
+        }
+
+        .immersive-tab:hover:not(.active) {
+            border-bottom-color: #ddd;
+        }
+
+        .immersive-content {
+            display: none;
+        }
+
+        .immersive-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .immersive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="logo">
+                    <a href="index.html">EdPsych Connect</a>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="assessment.html">Assessment</a></li>
+                        <li><a href="immersive.html" class="active">Immersive</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="auth/login.html" class="btn-login">Log In</a>
+                    <a href="auth/register.html" class="btn-signup">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="immersive-container">
+            <div class="immersive-header">
+                <h1>Immersive Learning Experiences</h1>
+                <p>Explore educational content in virtual reality and immersive 3D environments. Enhance understanding through interactive, spatial learning experiences.</p>
+            </div>
+
+            <div class="immersive-tabs">
+                <div class="immersive-tab active" data-tab="experiences">Experiences</div>
+                <div class="immersive-tab" data-tab="viewer">360° Viewer</div>
+                <div class="immersive-tab" data-tab="models">3D Models</div>
+                <div class="immersive-tab" data-tab="classroom">Virtual Classroom</div>
+            </div>
+
+            <!-- Experiences Tab -->
+            <div class="immersive-content active" id="experiences-content">
+                <div class="immersive-grid">
+                    <!-- Experience Card 1 -->
+                    <div class="immersive-card">
+                        <div class="immersive-card-image" style="background-image: url('https://source.unsplash.com/random/600x400/?solar-system');"></div>
+                        <div class="immersive-card-content">
+                            <h3>Solar System Explorer</h3>
+                            <p>Explore the planets and moons of our solar system in an immersive 3D environment.</p>
+                            <a href="#" class="btn" data-experience="solar-system">Launch Experience</a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card 2 -->
+                    <div class="immersive-card">
+                        <div class="immersive-card-image" style="background-image: url('https://source.unsplash.com/random/600x400/?human-anatomy');"></div>
+                        <div class="immersive-card-content">
+                            <h3>Human Anatomy</h3>
+                            <p>Explore the human body systems in an interactive 3D environment with detailed annotations.</p>
+                            <a href="#" class="btn" data-experience="human-anatomy">Launch Experience</a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card 3 -->
+                    <div class="immersive-card">
+                        <div class="immersive-card-image" style="background-image: url('https://source.unsplash.com/random/600x400/?ancient-rome');"></div>
+                        <div class="immersive-card-content">
+                            <h3>Ancient Rome</h3>
+                            <p>Walk through a historically accurate reconstruction of ancient Rome in virtual reality.</p>
+                            <a href="#" class="btn" data-experience="ancient-rome">Launch Experience</a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card 4 -->
+                    <div class="immersive-card">
+                        <div class="immersive-card-image" style="background-image: url('https://source.unsplash.com/random/600x400/?chemistry-lab');"></div>
+                        <div class="immersive-card-content">
+                            <h3>Virtual Chemistry Lab</h3>
+                            <p>Conduct chemistry experiments in a safe, virtual environment with realistic simulations.</p>
+                            <a href="#" class="btn" data-experience="chemistry-lab">Launch Experience</a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card 5 -->
+                    <div class="immersive-card">
+                        <div class="immersive-card-image" style="background-image: url('https://source.unsplash.com/random/600x400/?ecosystem');"></div>
+                        <div class="immersive-card-content">
+                            <h3>Ecosystem Explorer</h3>
+                            <p>Explore different ecosystems and observe the interactions between organisms and their environment.</p>
+                            <a href="#" class="btn" data-experience="ecosystem">Launch Experience</a>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card 6 -->
+                    <div class="immersive-card">
+                        <div class="immersive-card-image" style="background-image: url('https://source.unsplash.com/random/600x400/?mathematics');"></div>
+                        <div class="immersive-card-content">
+                            <h3>Mathematical Visualizations</h3>
+                            <p>Visualize complex mathematical concepts in 3D space for better understanding and intuition.</p>
+                            <a href="#" class="btn" data-experience="mathematics">Launch Experience</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 360° Viewer Tab -->
+            <div class="immersive-content" id="viewer-content">
+                <div class="immersive-viewer">
+                    <h2>360° Content Viewer</h2>
+                    <p>Explore 360° photos and videos of educational content. Use your mouse to look around or enter VR mode for a fully immersive experience.</p>
+                    <div id="viewer-container"></div>
+                    <div style="margin-top: 20px;">
+                        <h3>Available Content</h3>
+                        <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                            <button class="btn" data-content="rainforest">Amazon Rainforest</button>
+                            <button class="btn" data-content="coral-reef">Great Barrier Reef</button>
+                            <button class="btn" data-content="mars">Mars Surface</button>
+                            <button class="btn" data-content="museum">Natural History Museum</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Models Tab -->
+            <div class="immersive-content" id="models-content">
+                <div class="immersive-viewer">
+                    <h2>3D Model Viewer</h2>
+                    <p>Explore interactive 3D models with annotations. Rotate, zoom, and examine objects from all angles.</p>
+                    <div id="model-container"></div>
+                    <div style="margin-top: 20px;">
+                        <h3>Available Models</h3>
+                        <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                            <button class="btn" data-model="heart">Human Heart</button>
+                            <button class="btn" data-model="skull">Human Skull</button>
+                            <button class="btn" data-model="cell">Animal Cell</button>
+                            <button class="btn" data-model="engine">Combustion Engine</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Classroom Tab -->
+            <div class="immersive-content" id="classroom-content">
+                <div class="immersive-viewer">
+                    <h2>Virtual Classroom</h2>
+                    <p>Enter a virtual classroom environment where you can interact with educational content and collaborate with others.</p>
+                    <div id="classroom-container"></div>
+                    <div style="margin-top: 20px;">
+                        <h3>Classroom Options</h3>
+                        <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                            <button class="btn" data-classroom="science">Science Lab</button>
+                            <button class="btn" data-classroom="history">History Classroom</button>
+                            <button class="btn" data-classroom="math">Math Workshop</button>
+                            <button class="btn" data-classroom="language">Language Studio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module">
+        import Viewer360 from './immersive/scenes/Viewer360.js';
+
+        // Tab switching functionality
+        document.querySelectorAll('.immersive-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.immersive-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.immersive-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+
+        // Initialize 360° viewer when that tab is clicked
+        document.querySelector('.immersive-tab[data-tab="viewer"]').addEventListener('click', initializeViewer);
+
+        let viewer = null;
+
+        function initializeViewer() {
+            if (viewer) return; // Already initialized
+
+            viewer = new Viewer360({
+                containerId: 'viewer-container',
+                width: '100%',
+                height: '500px',
+                showControls: true,
+                showVRToggle: true
+            });
+
+            viewer.initialize();
+
+            // Set up content buttons
+            document.querySelectorAll('[data-content]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const contentType = button.getAttribute('data-content');
+                    loadContent(contentType);
+                });
+            });
+
+            // Load default content
+            loadContent('rainforest');
+        }
+
+        function loadContent(contentType) {
+            if (!viewer) return;
+
+            let content;
+            switch (contentType) {
+                case 'rainforest':
+                    content = {
+                        type: 'image',
+                        src: 'https://source.unsplash.com/random/2048x1024/?rainforest',
+                        hotspots: [
+                            {
+                                position: { x: 1, y: 1.6, z: -3 },
+                                title: 'Rainforest Canopy',
+                                content: 'The rainforest canopy is home to 50% of all plant species. It forms a dense roof over the forest floor and can be 100 feet above the ground.'
+                            },
+                            {
+                                position: { x: -2, y: 1, z: -2 },
+                                title: 'Biodiversity',
+                                content: 'Rainforests contain more than half of the world\'s plant and animal species, despite covering less than 6% of the Earth\'s surface.'
+                            }
+                        ]
+                    };
+                    break;
+                case 'coral-reef':
+                    content = {
+                        type: 'image',
+                        src: 'https://source.unsplash.com/random/2048x1024/?coral-reef',
+                        hotspots: [
+                            {
+                                position: { x: 2, y: 1.2, z: -2 },
+                                title: 'Coral Polyps',
+                                content: 'Corals are actually tiny animals called polyps. These polyps live in colonies and form the structure we know as coral reefs.'
+                            },
+                            {
+                                position: { x: -1.5, y: 1.5, z: -2.5 },
+                                title: 'Reef Ecosystem',
+                                content: 'Coral reefs are among the most diverse ecosystems on Earth, hosting thousands of species of fish, invertebrates, and other marine life.'
+                            }
+                        ]
+                    };
+                    break;
+                case 'mars':
+                    content = {
+                        type: 'image',
+                        src: 'https://source.unsplash.com/random/2048x1024/?mars-surface',
+                        hotspots: [
+                            {
+                                position: { x: 1.5, y: 1.3, z: -2.5 },
+                                title: 'Martian Soil',
+                                content: 'The reddish color of Mars comes from iron oxide (rust) in its soil. The soil contains compounds that would be toxic to many Earth plants.'
+                            },
+                            {
+                                position: { x: -2, y: 1.7, z: -2 },
+                                title: 'Atmosphere',
+                                content: 'Mars has a thin atmosphere composed mainly of carbon dioxide. The atmospheric pressure is less than 1% of Earth\'s at sea level.'
+                            }
+                        ]
+                    };
+                    break;
+                case 'museum':
+                    content = {
+                        type: 'image',
+                        src: 'https://source.unsplash.com/random/2048x1024/?natural-history-museum',
+                        hotspots: [
+                            {
+                                position: { x: 2, y: 1.5, z: -2 },
+                                title: 'Dinosaur Exhibit',
+                                content: 'This T-Rex skeleton is one of the most complete ever found. It stands over 12 feet tall and is approximately 65 million years old.'
+                            },
+                            {
+                                position: { x: -1.5, y: 1.2, z: -3 },
+                                title: 'Geological Collection',
+                                content: 'This collection features minerals and rocks from around the world, including rare specimens that help scientists understand Earth\'s formation.'
+                            }
+                        ]
+                    };
+                    break;
+            }
+
+            if (content) {
+                viewer.loadContent(content);
+            }
+        }
+
+        // Handle experience buttons
+        document.querySelectorAll('[data-experience]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const experience = button.getAttribute('data-experience');
+                alert(`The ${experience} experience will launch in a future update. Stay tuned!`);
+            });
+        });
+
+        // Handle model buttons
+        document.querySelectorAll('[data-model]').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('3D Model viewer will be available in a future update. Stay tuned!');
+            });
+        });
+
+        // Handle classroom buttons
+        document.querySelectorAll('[data-classroom]').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Virtual Classroom will be available in a future update. Stay tuned!');
+            });
+        });
+    </script>
+</body>
+</html>

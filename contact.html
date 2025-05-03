@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <script src="js/navigation.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html" class="active">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Contact Us</h1>
+        <p>We'd Love to Hear From You</p>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about EdPsych Connect? Want to learn more about our platform or schedule a demo? Our team is here to help.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📧</div>
+                            <div class="method-details">
+                                <h3>Email Us</h3>
+                                <p>info@edpsychconnect.com</p>
+                                <p class="method-note">We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">📞</div>
+                            <div class="method-details">
+                                <h3>Call Us</h3>
+                                <p>+44 (0)123 456 7890</p>
+                                <p class="method-note">Monday-Friday, 9:00 AM - 5:00 PM GMT</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">🏢</div>
+                            <div class="method-details">
+                                <h3>Visit Us</h3>
+                                <p>123 Education Lane<br>London, EC1A 1BB<br>United Kingdom</p>
+                                <p class="method-note">Please schedule an appointment first</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/edpsychconnect" class="social-icon" aria-label="Twitter">
+                                <span>Twitter</span>
+                            </a>
+                            <a href="https://www.linkedin.com/company/edpsychconnect" class="social-icon" aria-label="LinkedIn">
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.facebook.com/edpsychconnect" class="social-icon" aria-label="Facebook">
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.youtube.com/edpsychconnect" class="social-icon" aria-label="YouTube">
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-type">Inquiry Type</label>
+                            <select id="inquiry-type" name="inquiry-type" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="demo">Request a Demo</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter for updates and educational resources</label>
+                        </div>
+                        
+                        <div class="message-status"></div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How can I schedule a demo of the platform?</h3>
+                    <p>You can request a demo by filling out the contact form on this page or by emailing us directly at demos@edpsychconnect.com. Please include your preferred date and time, and we'll get back to you to confirm.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer training for educators?</h3>
+                    <p>Yes, we provide comprehensive training sessions for educators and institutions. These can be conducted virtually or in-person, depending on your needs and location. Contact our team to learn more about our training options.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is EdPsych Connect available internationally?</h3>
+                    <p>Yes, EdPsych Connect is available worldwide. While our platform is optimized for UK educational standards, it can be adapted for use in other educational systems. Contact us to discuss your specific requirements.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How do I report a technical issue?</h3>
+                    <p>Technical issues can be reported through our support portal at support.edpsychconnect.com or by emailing support@edpsychconnect.com. Please include as much detail as possible, including screenshots if applicable.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles specific to the contact page */
+        .contact-section {
+            margin-bottom: 60px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            padding-right: 20px;
+        }
+        
+        .contact-methods {
+            margin: 30px 0;
+        }
+        
+        .contact-method {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .method-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: #4a6cf7;
+        }
+        
+        .method-details h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        
+        .method-details p {
+            margin: 0 0 5px 0;
+        }
+        
+        .method-note {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .contact-form-container {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        
+        .message-status {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .message-status.success {
+            color: #38a169;
+        }
+        
+        .message-status.error {
+            color: #e53e3e;
+        }
+        
+        .submit-button {
+            background-color: #4a6cf7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: #3a5bd9;
+        }
+        
+        .faq-section {
+            margin: 60px 0;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .faq-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-item h3 {
+            color: #4a6cf7;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const messageStatus = document.querySelector('.message-status');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real implementation, this would send the form data to a server
+                    // For now, we'll simulate a successful form submission
+                    
+                    // Show loading state
+                    const submitButton = this.querySelector('.submit-button');
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    
+                    // Simulate API call delay
+                    setTimeout(function() {
+                        // Show success message
+                        messageStatus.textContent = 'Your message has been sent successfully. We\'ll get back to you soon!';
+                        messageStatus.className = 'message-status success';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Reset button
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
