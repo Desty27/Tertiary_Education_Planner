@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Library - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="resources.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="resources.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/" class="active">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html" class="active">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Resource Library</h1>
+        <p>Explore our extensive collection of educational resources</p>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="resource-search" placeholder="Search resources...">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="subject-filter">Subject:</label>
+                    <select id="subject-filter">
+                        <option value="">All Subjects</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="art">Art</option>
+                        <option value="music">Music</option>
+                        <option value="physical-education">Physical Education</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="age-filter">Age Group:</label>
+                    <select id="age-filter">
+                        <option value="">All Ages</option>
+                        <option value="early-years">Early Years (3-5)</option>
+                        <option value="key-stage-1">Key Stage 1 (5-7)</option>
+                        <option value="key-stage-2">Key Stage 2 (7-11)</option>
+                        <option value="key-stage-3">Key Stage 3 (11-14)</option>
+                        <option value="key-stage-4">Key Stage 4 (14-16)</option>
+                        <option value="post-16">Post-16 (16+)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter">Resource Type:</label>
+                    <select id="type-filter">
+                        <option value="">All Types</option>
+                        <option value="lesson-plan">Lesson Plan</option>
+                        <option value="worksheet">Worksheet</option>
+                        <option value="presentation">Presentation</option>
+                        <option value="assessment">Assessment</option>
+                        <option value="activity">Activity</option>
+                        <option value="video">Video</option>
+                        <option value="research">Research Paper</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-grid">
+            <!-- Resource cards will be dynamically generated here -->
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/math-fractions.jpg" alt="Mathematics Fractions">
+                </div>
+                <div class="resource-details">
+                    <h3>Understanding Fractions: A Comprehensive Guide</h3>
+                    <p class="resource-meta">Mathematics | Key Stage 2 | Lesson Plan</p>
+                    <p class="resource-description">A comprehensive guide to teaching fractions to Key Stage 2 students, including visual aids, practical activities, and assessment tools.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary add-favourite">Add to Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/english-creative-writing.jpg" alt="Creative Writing">
+                </div>
+                <div class="resource-details">
+                    <h3>Creative Writing Workshop: Developing Characters</h3>
+                    <p class="resource-meta">English | Key Stage 3 | Activity</p>
+                    <p class="resource-description">A workshop designed to help students develop compelling characters for creative writing, including character profiles, dialogue exercises, and peer feedback activities.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary add-favourite">Add to Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/science-ecosystems.jpg" alt="Ecosystems">
+                </div>
+                <div class="resource-details">
+                    <h3>Exploring Ecosystems: Interactive Learning Module</h3>
+                    <p class="resource-meta">Science | Key Stage 3 | Presentation</p>
+                    <p class="resource-description">An interactive presentation on ecosystems, including food webs, energy transfer, and human impact. Includes embedded videos and discussion prompts.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary add-favourite">Add to Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/history-tudors.jpg" alt="Tudor Period">
+                </div>
+                <div class="resource-details">
+                    <h3>The Tudor Period: Primary Source Analysis</h3>
+                    <p class="resource-meta">History | Key Stage 4 | Worksheet</p>
+                    <p class="resource-description">A collection of primary sources from the Tudor period with guided analysis questions and historical context. Ideal for developing critical thinking skills.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary add-favourite">Add to Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/geography-climate.jpg" alt="Climate Change">
+                </div>
+                <div class="resource-details">
+                    <h3>Climate Change: Global Perspectives</h3>
+                    <p class="resource-meta">Geography | Key Stage 4 | Research</p>
+                    <p class="resource-description">A research-based resource examining climate change from multiple global perspectives, including data analysis, case studies, and discussion of mitigation strategies.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary add-favourite">Add to Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/early-years-phonics.jpg" alt="Phonics">
+                </div>
+                <div class="resource-details">
+                    <h3>Phonics Fun: Interactive Activities for Early Readers</h3>
+                    <p class="resource-meta">English | Early Years | Activity</p>
+                    <p class="resource-description">A collection of interactive phonics activities designed for early years learners, including games, songs, and visual aids to support early reading development.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary add-favourite">Add to Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <button class="pagination-button" disabled>Previous</button>
+            <span class="pagination-info">Page 1 of 10</span>
+            <button class="pagination-button">Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

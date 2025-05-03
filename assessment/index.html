@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="assessment.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="assessment.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/" class="active">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-header">
+        <div class="hero-content">
+            <h1>AI-Powered Assessment</h1>
+            <p>Create, administer, and analyze assessments with intelligent tools that provide deep insights into student learning</p>
+            <div class="hero-actions">
+                <a href="/assessment/create.html" class="button">Create Assessment</a>
+                <a href="/assessment/take.html" class="button button-secondary">Take Assessment</a>
+                <a href="/assessment/results.html" class="button button-secondary">View Results</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="assessment-overview">
+            <div class="section-header">
+                <h2>Comprehensive Assessment Tools</h2>
+                <p>Gain deeper insights into student learning with our suite of assessment tools</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/create.svg" alt="Create Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Create Assessment</h3>
+                    <p>Design customized assessments with a variety of question types, difficulty levels, and formats. Align with curriculum standards and learning objectives.</p>
+                    <ul class="feature-list">
+                        <li>Multiple question types (multiple choice, short answer, essay, etc.)</li>
+                        <li>AI-assisted question generation based on learning objectives</li>
+                        <li>Automatic alignment with curriculum standards</li>
+                        <li>Customizable difficulty levels and time limits</li>
+                    </ul>
+                    <a href="/assessment/create.html" class="button">Create Assessment</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/take.svg" alt="Take Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Take Assessment</h3>
+                    <p>Administer assessments to individuals or groups with a user-friendly interface. Monitor progress in real-time and provide immediate feedback.</p>
+                    <ul class="feature-list">
+                        <li>Secure assessment environment with anti-cheating measures</li>
+                        <li>Accessible design for all learners</li>
+                        <li>Online and offline assessment options</li>
+                        <li>Immediate feedback and explanations</li>
+                    </ul>
+                    <a href="/assessment/take.html" class="button">Take Assessment</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/results.svg" alt="Results Icon" class="icon-placeholder">
+                    </div>
+                    <h3>View Results</h3>
+                    <p>Analyze assessment results with powerful visualization tools and AI-powered insights. Identify patterns, strengths, and areas for improvement.</p>
+                    <ul class="feature-list">
+                        <li>Detailed individual and group performance reports</li>
+                        <li>Item analysis and difficulty metrics</li>
+                        <li>Learning gap identification</li>
+                        <li>Personalized intervention recommendations</li>
+                    </ul>
+                    <a href="/assessment/results.html" class="button">View Results</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-insights">
+            <div class="section-header">
+                <h2>AI-Powered Assessment Insights</h2>
+                <p>Leverage artificial intelligence to gain deeper understanding of student learning</p>
+            </div>
+            
+            <div class="insights-content">
+                <div class="insights-image">
+                    <img src="../images/assessment/insights.jpg" alt="AI Insights" class="image-placeholder">
+                </div>
+                
+                <div class="insights-details">
+                    <h3>Beyond Traditional Assessment</h3>
+                    <p>Our AI-powered assessment system goes beyond traditional scoring to provide comprehensive insights into student thinking, learning patterns, and conceptual understanding.</p>
+                    
+                    <div class="insights-features">
+                        <div class="insights-feature">
+                            <h4>Misconception Detection</h4>
+                            <p>Identify specific misconceptions and knowledge gaps based on response patterns and common errors.</p>
+                        </div>
+                        
+                        <div class="insights-feature">
+                            <h4>Learning Progression Analysis</h4>
+                            <p>Track development along learning progressions to understand where students are in their conceptual journey.</p>
+                        </div>
+                        
+                        <div class="insights-feature">
+                            <h4>Cognitive Process Mapping</h4>
+                            <p>Analyze the cognitive processes students use when solving problems or answering questions.</p>
+                        </div>
+                        
+                        <div class="insights-feature">
+                            <h4>Personalized Feedback Generation</h4>
+                            <p>Generate tailored feedback and explanations based on individual student responses and learning needs.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="/assessment/insights.html" class="button">Explore AI Insights</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="assessment-types">
+            <div class="section-header">
+                <h2>Assessment Types</h2>
+                <p>Choose from a variety of assessment formats to meet your educational needs</p>
+            </div>
+            
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-header">
+                        <h3>Formative Assessment</h3>
+                    </div>
+                    <p class="type-description">Ongoing assessments that provide immediate feedback to inform teaching and learning. Ideal for monitoring progress and adjusting instruction.</p>
+                    <ul class="type-features">
+                        <li>Quick checks for understanding</li>
+                        <li>Low-stakes quizzes and activities</li>
+                        <li>Immediate feedback and guidance</li>
+                        <li>Progress tracking over time</li>
+                    </ul>
+                    <a href="/assessment/create.html?type=formative" class="button">Create Formative Assessment</a>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-header">
+                        <h3>Summative Assessment</h3>
+                    </div>
+                    <p class="type-description">End-of-unit or end-of-term assessments that evaluate student learning against standards and objectives. Comprehensive coverage of content.</p>
+                    <ul class="type-features">
+                        <li>Comprehensive content coverage</li>
+                        <li>Multiple question formats</li>
+                        <li>Standards-aligned evaluation</li>
+                        <li>Detailed performance reports</li>
+                    </ul>
+                    <a href="/assessment/create.html?type=summative" class="button">Create Summative Assessment</a>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-header">
+                        <h3>Diagnostic Assessment</h3>
+                    </div>
+                    <p class="type-description">Pre-instruction assessments that identify prior knowledge, misconceptions, and learning needs. Helps tailor instruction to student needs.</p>
+                    <ul class="type-features">
+                        <li>Prior knowledge evaluation</li>
+                        <li>Misconception identification</li>
+                        <li>Learning readiness analysis</li>
+                        <li>Instructional planning guidance</li>
+                    </ul>
+                    <a href="/assessment/create.html?type=diagnostic" class="button">Create Diagnostic Assessment</a>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-header">
+                        <h3>Performance Assessment</h3>
+                    </div>
+                    <p class="type-description">Authentic tasks that require students to apply knowledge and skills in real-world contexts. Evaluates complex thinking and application.</p>
+                    <ul class="type-features">
+                        <li>Project-based evaluation</li>
+                        <li>Real-world application tasks</li>
+                        <li>Rubric-based assessment</li>
+                        <li>Portfolio development</li>
+                    </ul>
+                    <a href="/assessment/create.html?type=performance" class="button">Create Performance Assessment</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-integration">
+            <div class="section-header">
+                <h2>Seamless Data Integration</h2>
+                <p>Connect assessment data with curriculum planning and personalized learning</p>
+            </div>
+            
+            <div class="integration-features">
+                <div class="integration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/curriculum.svg" alt="Curriculum Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Curriculum Alignment</h3>
+                    <p>Link assessment results directly to curriculum objectives and standards. Identify areas of the curriculum that need reinforcement or extension.</p>
+                </div>
+                
+                <div class="integration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/personalization.svg" alt="Personalization Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Personalized Learning Pathways</h3>
+                    <p>Use assessment data to generate individualized learning pathways that address specific needs and build on strengths.</p>
+                </div>
+                
+                <div class="integration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/reporting.svg" alt="Reporting Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Comprehensive Reporting</h3>
+                    <p>Generate detailed reports for students, parents, administrators, and other stakeholders with appropriate level of detail for each audience.</p>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="/auth/register.html" class="button">Start Using Integrated Assessment</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles specific to the assessment index page */
+        .hero-header {
+            background-color: #4a6cf7;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .button-secondary {
+            background-color: white;
+            color: #4a6cf7;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-header h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background-color: #e6ecff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icon-placeholder {
+            width: 35px;
+            height: 35px;
+            background-color: #4a6cf7;
+            border-radius: 50%;
+        }
+        
+        .feature-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .feature-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .feature-list {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .feature-card .button {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .ai-insights {
+            background-color: #f0f4ff;
+            padding: 3rem 2rem;
+            margin-bottom: 4rem;
+            border-radius: 8px;
+        }
+        
+        .insights-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .insights-image {
+            flex: 1;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 8px;
+        }
+        
+        .insights-details {
+            flex: 1;
+        }
+        
+        .insights-details h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .insights-details p {
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .insights-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .insights-feature h4 {
+            color: #4a6cf7;
+            margin-bottom: 0.5rem;
+        }
+        
+        .insights-feature p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .type-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .type-header {
+            margin-bottom: 1rem;
+        }
+        
+        .type-header h3 {
+            color: #333;
+            margin: 0;
+        }
+        
+        .type-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .type-features {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .type-features li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .type-card .button {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .data-integration {
+            margin-bottom: 4rem;
+        }
+        
+        .integration-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .integration-feature {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .integration-feature .feature-icon {
+            margin-bottom: 1.5rem;
+        }
+        
+        .integration-feature h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .integration-feature p {
+            color: #666;
+        }
+        
+        .cta-container {
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .hero-actions .button {
+                width: 100%;
+            }
+            
+            .insights-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .insights-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

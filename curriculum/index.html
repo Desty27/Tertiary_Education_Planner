@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="curriculum.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="curriculum.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/" class="active">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-header">
+        <div class="hero-content">
+            <h1>Curriculum Planning</h1>
+            <p>Design, organize, and implement effective curriculum with AI-powered tools</p>
+            <div class="hero-actions">
+                <a href="/curriculum/planner.html" class="button">Curriculum Planner</a>
+                <a href="/curriculum/standards.html" class="button button-secondary">UK Standards</a>
+                <a href="/curriculum/lessons.html" class="button button-secondary">Lesson Planning</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="curriculum-overview">
+            <div class="section-header">
+                <h2>AI-Powered Curriculum Development</h2>
+                <p>Transform your curriculum planning with intelligent tools and personalized recommendations</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/planner.svg" alt="Planner Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Curriculum Planner</h3>
+                    <p>Design comprehensive curriculum plans aligned with educational standards. Organize units, lessons, and assessments in a cohesive framework.</p>
+                    <ul class="feature-list">
+                        <li>Create curriculum maps for entire terms or academic years</li>
+                        <li>Align content with national and local educational standards</li>
+                        <li>Organize units and lessons in a logical progression</li>
+                        <li>Integrate assessments and learning objectives</li>
+                    </ul>
+                    <a href="/curriculum/planner.html" class="button">Open Planner</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/standards.svg" alt="Standards Icon" class="icon-placeholder">
+                    </div>
+                    <h3>UK Standards</h3>
+                    <p>Access comprehensive UK educational standards across all subjects and key stages. Ensure your curriculum meets national requirements.</p>
+                    <ul class="feature-list">
+                        <li>Browse standards for all key stages and subjects</li>
+                        <li>Search for specific competencies and learning objectives</li>
+                        <li>Track standards coverage in your curriculum</li>
+                        <li>Receive recommendations for addressing gaps</li>
+                    </ul>
+                    <a href="/curriculum/standards.html" class="button">Explore Standards</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/lessons.svg" alt="Lessons Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Lesson Planning</h3>
+                    <p>Create detailed, engaging lesson plans with AI assistance. Generate activities, resources, and assessments tailored to your students' needs.</p>
+                    <ul class="feature-list">
+                        <li>Design structured lesson plans with clear objectives</li>
+                        <li>Generate engaging activities and discussion prompts</li>
+                        <li>Incorporate differentiation strategies for diverse learners</li>
+                        <li>Link to resources and assessment tools</li>
+                    </ul>
+                    <a href="/curriculum/lessons.html" class="button">Plan Lessons</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-personalization">
+            <div class="section-header">
+                <h2>Personalized Learning Pathways</h2>
+                <p>Tailor curriculum to individual student needs with AI-powered personalization</p>
+            </div>
+            
+            <div class="personalization-content">
+                <div class="personalization-image">
+                    <img src="../images/curriculum/personalization.jpg" alt="Personalized Learning" class="image-placeholder">
+                </div>
+                
+                <div class="personalization-details">
+                    <h3>How AI Personalization Works</h3>
+                    <p>Our advanced AI algorithms analyze student data to identify learning patterns, preferences, and needs. This information is used to generate personalized curriculum recommendations that address individual strengths and challenges.</p>
+                    
+                    <div class="personalization-features">
+                        <div class="personalization-feature">
+                            <h4>Learning Style Analysis</h4>
+                            <p>Identify visual, auditory, kinesthetic, and other learning preferences to tailor instructional approaches.</p>
+                        </div>
+                        
+                        <div class="personalization-feature">
+                            <h4>Skill Gap Identification</h4>
+                            <p>Pinpoint specific areas where students need additional support and generate targeted interventions.</p>
+                        </div>
+                        
+                        <div class="personalization-feature">
+                            <h4>Interest-Based Engagement</h4>
+                            <p>Incorporate student interests and real-world connections to increase motivation and relevance.</p>
+                        </div>
+                        
+                        <div class="personalization-feature">
+                            <h4>Adaptive Pacing</h4>
+                            <p>Adjust the pace of instruction based on student progress and mastery of concepts.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="/auth/login.html" class="button">Enable AI Personalization</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="curriculum-templates">
+            <div class="section-header">
+                <h2>Curriculum Templates</h2>
+                <p>Start with professionally designed templates for various subjects and age groups</p>
+            </div>
+            
+            <div class="templates-grid">
+                <div class="template-card">
+                    <div class="template-header">
+                        <h3>Primary Mathematics</h3>
+                        <span class="template-badge">Key Stage 1-2</span>
+                    </div>
+                    <p class="template-description">A comprehensive mathematics curriculum covering number sense, operations, geometry, measurement, and data analysis for primary students.</p>
+                    <a href="#" class="button">Use Template</a>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-header">
+                        <h3>Secondary Science</h3>
+                        <span class="template-badge">Key Stage 3-4</span>
+                    </div>
+                    <p class="template-description">An integrated science curriculum covering biology, chemistry, and physics with hands-on experiments and inquiry-based learning.</p>
+                    <a href="#" class="button">Use Template</a>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-header">
+                        <h3>English Literature</h3>
+                        <span class="template-badge">Key Stage 3-4</span>
+                    </div>
+                    <p class="template-description">A literature-focused curriculum exploring various genres, literary analysis, critical thinking, and creative writing.</p>
+                    <a href="#" class="button">Use Template</a>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-header">
+                        <h3>Early Years Foundation</h3>
+                        <span class="template-badge">EYFS</span>
+                    </div>
+                    <p class="template-description">A play-based curriculum supporting early development across communication, physical, personal, social, and cognitive domains.</p>
+                    <a href="#" class="button">Use Template</a>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-header">
+                        <h3>Computing & Digital Skills</h3>
+                        <span class="template-badge">All Key Stages</span>
+                    </div>
+                    <p class="template-description">A progressive computing curriculum covering digital literacy, programming, data handling, and computational thinking.</p>
+                    <a href="#" class="button">Use Template</a>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-header">
+                        <h3>Cross-Curricular Projects</h3>
+                        <span class="template-badge">All Key Stages</span>
+                    </div>
+                    <p class="template-description">Thematic project-based learning units that integrate multiple subjects around engaging real-world topics.</p>
+                    <a href="#" class="button">Use Template</a>
+                </div>
+            </div>
+            
+            <div class="view-all-container">
+                <a href="/curriculum/templates.html" class="button button-secondary">View All Templates</a>
+            </div>
+        </section>
+
+        <section class="collaboration-section">
+            <div class="section-header">
+                <h2>Collaborative Curriculum Development</h2>
+                <p>Work together with colleagues to create and refine curriculum</p>
+            </div>
+            
+            <div class="collaboration-features">
+                <div class="collaboration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/share.svg" alt="Share Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Share & Collaborate</h3>
+                    <p>Share curriculum plans with colleagues and collaborate in real-time. Add comments, suggestions, and track changes as you work together.</p>
+                </div>
+                
+                <div class="collaboration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/department.svg" alt="Department Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Department Alignment</h3>
+                    <p>Ensure consistency across your department with shared templates, standards alignment, and coordinated assessment strategies.</p>
+                </div>
+                
+                <div class="collaboration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/feedback.svg" alt="Feedback Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Feedback & Iteration</h3>
+                    <p>Gather feedback on curriculum plans from colleagues, mentors, or administrators. Iterate and improve based on suggestions.</p>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="/auth/register.html" class="button">Start Collaborating</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles specific to the curriculum index page */
+        .hero-header {
+            background-color: #4a6cf7;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .button-secondary {
+            background-color: white;
+            color: #4a6cf7;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-header h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background-color: #e6ecff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icon-placeholder {
+            width: 35px;
+            height: 35px;
+            background-color: #4a6cf7;
+            border-radius: 50%;
+        }
+        
+        .feature-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .feature-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .feature-list {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .feature-card .button {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .ai-personalization {
+            background-color: #f0f4ff;
+            padding: 3rem 2rem;
+            margin-bottom: 4rem;
+            border-radius: 8px;
+        }
+        
+        .personalization-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .personalization-image {
+            flex: 1;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 8px;
+        }
+        
+        .personalization-details {
+            flex: 1;
+        }
+        
+        .personalization-details h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .personalization-details p {
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .personalization-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .personalization-feature h4 {
+            color: #4a6cf7;
+            margin-bottom: 0.5rem;
+        }
+        
+        .personalization-feature p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .template-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .template-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .template-header h3 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .template-badge {
+            background-color: #e6ecff;
+            color: #4a6cf7;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .template-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            min-height: 4.5rem;
+        }
+        
+        .template-card .button {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .view-all-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .collaboration-section {
+            margin-bottom: 4rem;
+        }
+        
+        .collaboration-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .collaboration-feature {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .collaboration-feature .feature-icon {
+            margin-bottom: 1.5rem;
+        }
+        
+        .collaboration-feature h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .collaboration-feature p {
+            color: #666;
+        }
+        
+        .cta-container {
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .hero-actions .button {
+                width: 100%;
+            }
+            
+            .personalization-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .personalization-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

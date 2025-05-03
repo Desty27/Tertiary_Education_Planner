@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Assessment - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="assessment.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="assessment.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/" class="active">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html" class="active">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Take Assessment</h1>
+        <p>Complete assessments with a user-friendly interface and receive immediate feedback</p>
+    </header>
+
+    <main>
+        <section class="available-assessments">
+            <h2>Available Assessments</h2>
+            
+            <div class="assessment-filters">
+                <div class="filter-group">
+                    <label for="filter-subject">Subject:</label>
+                    <select id="filter-subject">
+                        <option value="">All Subjects</option>
+                        <option value="mathematics" selected>Mathematics</option>
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="art">Art</option>
+                        <option value="music">Music</option>
+                        <option value="physical-education">Physical Education</option>
+                        <option value="computing">Computing</option>
+                        <option value="languages">Languages</option>
+                        <option value="religious-education">Religious Education</option>
+                        <option value="pshe">PSHE</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-key-stage">Key Stage:</label>
+                    <select id="filter-key-stage">
+                        <option value="">All Key Stages</option>
+                        <option value="early-years">Early Years (3-5)</option>
+                        <option value="key-stage-1">Key Stage 1 (5-7)</option>
+                        <option value="key-stage-2" selected>Key Stage 2 (7-11)</option>
+                        <option value="key-stage-3">Key Stage 3 (11-14)</option>
+                        <option value="key-stage-4">Key Stage 4 (14-16)</option>
+                        <option value="post-16">Post-16 (16+)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-type">Type:</label>
+                    <select id="filter-type">
+                        <option value="">All Types</option>
+                        <option value="formative" selected>Formative</option>
+                        <option value="summative">Summative</option>
+                        <option value="diagnostic">Diagnostic</option>
+                        <option value="performance">Performance</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="assessments-list">
+                <div class="assessment-card">
+                    <div class="assessment-info">
+                        <h3>Mathematics: Place Value Assessment</h3>
+                        <div class="assessment-meta">
+                            <span class="meta-item">Mathematics</span>
+                            <span class="meta-item">Year 5</span>
+                            <span class="meta-item">Formative</span>
+                            <span class="meta-item">30 minutes</span>
+                            <span class="meta-item">5 questions</span>
+                        </div>
+                        <p class="assessment-description">This assessment evaluates understanding of place value concepts for numbers up to 1,000,000, including reading, writing, ordering, and comparing numbers.</p>
+                    </div>
+                    <div class="assessment-actions">
+                        <a href="#" class="button start-assessment" data-assessment-id="math-place-value">Start Assessment</a>
+                    </div>
+                </div>
+                
+                <div class="assessment-card">
+                    <div class="assessment-info">
+                        <h3>Mathematics: Addition and Subtraction</h3>
+                        <div class="assessment-meta">
+                            <span class="meta-item">Mathematics</span>
+                            <span class="meta-item">Year 5</span>
+                            <span class="meta-item">Formative</span>
+                            <span class="meta-item">30 minutes</span>
+                            <span class="meta-item">10 questions</span>
+                        </div>
+                        <p class="assessment-description">This assessment evaluates skills in adding and subtracting whole numbers with more than 4 digits, including using formal written methods and mental strategies.</p>
+                    </div>
+                    <div class="assessment-actions">
+                        <a href="#" class="button start-assessment" data-assessment-id="math-addition-subtraction">Start Assessment</a>
+                    </div>
+                </div>
+                
+                <div class="assessment-card">
+                    <div class="assessment-info">
+                        <h3>Mathematics: Multiplication and Division</h3>
+                        <div class="assessment-meta">
+                            <span class="meta-item">Mathematics</span>
+                            <span class="meta-item">Year 5</span>
+                            <span class="meta-item">Formative</span>
+                            <span class="meta-item">45 minutes</span>
+                            <span class="meta-item">15 questions</span>
+                        </div>
+                        <p class="assessment-description">This assessment evaluates multiplication and division skills, including multiplying and dividing by 10, 100, and 1,000, and using formal written methods.</p>
+                    </div>
+                    <div class="assessment-actions">
+                        <a href="#" class="button start-assessment" data-assessment-id="math-multiplication-division">Start Assessment</a>
+                    </div>
+                </div>
+                
+                <div class="assessment-card">
+                    <div class="assessment-info">
+                        <h3>Mathematics: End of Term Assessment</h3>
+                        <div class="assessment-meta">
+                            <span class="meta-item">Mathematics</span>
+                            <span class="meta-item">Year 5</span>
+                            <span class="meta-item">Summative</span>
+                            <span class="meta-item">60 minutes</span>
+                            <span class="meta-item">25 questions</span>
+                        </div>
+                        <p class="assessment-description">This comprehensive assessment covers all mathematics topics taught during the term, including place value, addition, subtraction, multiplication, division, and geometry.</p>
+                    </div>
+                    <div class="assessment-actions">
+                        <a href="#" class="button start-assessment" data-assessment-id="math-end-of-term">Start Assessment</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="active-assessment" style="display: none;">
+            <div class="assessment-container">
+                <div class="assessment-header">
+                    <h2 class="assessment-title">Mathematics: Place Value Assessment</h2>
+                    <div class="assessment-meta">
+                        <div class="meta-item">Time Remaining: <span id="time-remaining">30:00</span></div>
+                        <div class="meta-item">Questions: <span id="question-count">5</span></div>
+                    </div>
+                </div>
+                
+                <div class="assessment-body">
+                    <div class="question-navigation">
+                        <div class="question-nav-item active" data-question-id="q1">1</div>
+                        <div class="question-nav-item" data-question-id="q2">2</div>
+                        <div class="question-nav-item" data-question-id="q3">3</div>
+                        <div class="question-nav-item" data-question-id="q4">4</div>
+                        <div class="question-nav-item" data-question-id="q5">5</div>
+                    </div>
+                    
+                    <div class="assessment-questions">
+                        <div class="assessment-question" data-question-id="q1">
+                            <div class="question-content">
+                                <h3>Question 1</h3>
+                                <p>What is the value of the digit 7 in the number 275,349?</p>
+                                
+                                <div class="answer-section">
+                                    <div class="multiple-choice-options">
+                                        <div class="option-group">
+                                            <input type="radio" name="q1" id="q1-a" value="a" class="multiple-choice-option">
+                                            <label for="q1-a">7</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q1" id="q1-b" value="b" class="multiple-choice-option">
+                                            <label for="q1-b">70</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q1" id="q1-c" value="c" class="multiple-choice-option">
+                                            <label for="q1-c">700</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q1" id="q1-d" value="d" class="multiple-choice-option">
+                                            <label for="q1-d">7,000</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="assessment-question" data-question-id="q2" style="display: none;">
+                            <div class="question-content">
+                                <h3>Question 2</h3>
+                                <p>Order these numbers from smallest to largest: 523,456; 532,654; 523,465; 532,546</p>
+                                
+                                <div class="answer-section">
+                                    <div class="multiple-choice-options">
+                                        <div class="option-group">
+                                            <input type="radio" name="q2" id="q2-a" value="a" class="multiple-choice-option">
+                                            <label for="q2-a">523,456; 523,465; 532,546; 532,654</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q2" id="q2-b" value="b" class="multiple-choice-option">
+                                            <label for="q2-b">523,456; 523,465; 532,546; 532,654</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q2" id="q2-c" value="c" class="multiple-choice-option">
+                                            <label for="q2-c">532,654; 532,546; 523,465; 523,456</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q2" id="q2-d" value="d" class="multiple-choice-option">
+                                            <label for="q2-d">523,465; 523,456; 532,546; 532,654</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="assessment-question" data-question-id="q3" style="display: none;">
+                            <div class="question-content">
+                                <h3>Question 3</h3>
+                                <p>Round 347,982 to the nearest 10,000.</p>
+                                
+                                <div class="answer-section">
+                                    <div class="text-answer-container">
+                                        <input type="text" class="text-answer" placeholder="Enter your answer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="assessment-question" data-question-id="q4" style="display: none;">
+                            <div class="question-content">
+                                <h3>Question 4</h3>
+                                <p>True or False: The value of the digit 5 in 254,876 is 5,000.</p>
+                                
+                                <div class="answer-section">
+                                    <div class="multiple-choice-options">
+                                        <div class="option-group">
+                                            <input type="radio" name="q4" id="q4-a" value="true" class="multiple-choice-option">
+                                            <label for="q4-a">True</label>
+                                        </div>
+                                        
+                                        <div class="option-group">
+                                            <input type="radio" name="q4" id="q4-b" value="false" class="multiple-choice-option">
+                                            <label for="q4-b">False</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="assessment-question" data-question-id="q5" style="display: none;">
+                            <div class="question-content">
+                                <h3>Question 5</h3>
+                                <p>Explain how to determine the value of a digit in a number based on its position. Use the number 425,368 as an example in your explanation.</p>
+                                
+                                <div class="answer-section">
+                                    <div class="text-answer-container">
+                                        <textarea class="text-answer" rows="6" placeholder="Enter your answer"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="assessment-footer">
+                    <div class="assessment-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%;"></div>
+                        </div>
+                        <div class="progress-text">1 of 5 questions answered</div>
+                    </div>
+                    
+                    <div class="assessment-actions">
+                        <button class="button button-secondary prev-question-button" disabled>Previous</button>
+                        <button class="button next-question-button">Next</button>
+                        <button class="button submit-assessment-button" style="display: none;">Submit Assessment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="assessment-features">
+            <div class="section-header">
+                <h2>Assessment Features</h2>
+                <p>Our assessment platform provides a seamless experience for students and educators</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/accessibility.svg" alt="Accessibility Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Accessible Design</h3>
+                    <p>Our assessments are designed to be accessible to all learners, with features like adjustable text size, high-contrast mode, and screen reader compatibility.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/security.svg" alt="Security Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Secure Environment</h3>
+                    <p>Take assessments in a secure environment with anti-cheating measures and data protection to ensure the integrity of results.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/feedback.svg" alt="Feedback Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Immediate Feedback</h3>
+                    <p>Receive instant feedback on your performance, with detailed explanations and suggestions for improvement.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="../images/icons/offline.svg" alt="Offline Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Online and Offline</h3>
+                    <p>Access assessments online or download them for offline completion, ensuring flexibility in various learning environments.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Demo functionality for the assessment interface
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start assessment button
+            const startButtons = document.querySelectorAll('.start-assessment');
+            const availableAssessmentsSection = document.querySelector('.available-assessments');
+            const activeAssessmentSection = document.querySelector('.active-assessment');
+            
+            startButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide available assessments and show active assessment
+                    availableAssessmentsSection.style.display = 'none';
+                    activeAssessmentSection.style.display = 'block';
+                    
+                    // Start the timer
+                    startTimer();
+                });
+            });
+            
+            // Question navigation
+            const navItems = document.querySelectorAll('.question-nav-item');
+            const questions = document.querySelectorAll('.assessment-question');
+            const nextButton = document.querySelector('.next-question-button');
+            const prevButton = document.querySelector('.prev-question-button');
+            const submitButton = document.querySelector('.submit-assessment-button');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const questionId = this.dataset.questionId;
+                    navigateToQuestion(questionId);
+                });
+            });
+            
+            nextButton.addEventListener('click', function() {
+                const activeNavItem = document.querySelector('.question-nav-item.active');
+                const nextNavItem = activeNavItem.nextElementSibling;
+                
+                if (nextNavItem) {
+                    navigateToQuestion(nextNavItem.dataset.questionId);
+                }
+            });
+            
+            prevButton.addEventListener('click', function() {
+                const activeNavItem = document.querySelector('.question-nav-item.active');
+                const prevNavItem = activeNavItem.previousElementSibling;
+                
+                if (prevNavItem) {
+                    navigateToQuestion(prevNavItem.dataset.questionId);
+                }
+            });
+            
+            // Answer tracking
+            const multipleChoiceOptions = document.querySelectorAll('.multiple-choice-option');
+            const textAnswers = document.querySelectorAll('.text-answer');
+            
+            multipleChoiceOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    const questionId = this.name;
+                    const navItem = document.querySelector(`.question-nav-item[data-question-id="${questionId}"]`);
+                    navItem.classList.add('answered');
+                    updateProgress();
+                });
+            });
+            
+            textAnswers.forEach(answer => {
+                answer.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        const questionContainer = this.closest('.assessment-question');
+                        const questionId = questionContainer.dataset.questionId;
+                        const navItem = document.querySelector(`.question-nav-item[data-question-id="${questionId}"]`);
+                        navItem.classList.add('answered');
+                        updateProgress();
+                    }
+                });
+            });
+            
+            // Helper functions
+            function navigateToQuestion(questionId) {
+                // Hide all questions
+                questions.forEach(question => {
+                    question.style.display = 'none';
+                });
+                
+                // Show the selected question
+                const selectedQuestion = document.querySelector(`.assessment-question[data-question-id="${questionId}"]`);
+                if (selectedQuestion) {
+                    selectedQuestion.style.display = 'block';
+                }
+                
+                // Update navigation
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                const selectedNavItem = document.querySelector(`.question-nav-item[data-question-id="${questionId}"]`);
+                if (selectedNavItem) {
+                    selectedNavItem.classList.add('active');
+                }
+                
+                // Update button states
+                updateButtonStates();
+            }
+            
+            function updateButtonStates() {
+                const activeNavItem = document.querySelector('.question-nav-item.active');
+                const isFirstQuestion = !activeNavItem.previousElementSibling;
+                const isLastQuestion = !activeNavItem.nextElementSibling;
+                
+                prevButton.disabled = isFirstQuestion;
+                
+                if (isLastQuestion) {
+                    nextButton.style.display = 'none';
+                    submitButton.style.display = 'block';
+                } else {
+                    nextButton.style.display = 'block';
+                    submitButton.style.display = 'none';
+                }
+            }
+            
+            function updateProgress() {
+                const totalQuestions = navItems.length;
+                const answeredQuestions = document.querySelectorAll('.question-nav-item.answered').length;
+                
+                const progressFill = document.querySelector('.progress-fill');
+                const progressText = document.querySelector('.progress-text');
+                
+                progressFill.style.width = `${(answeredQuestions / totalQuestions) * 100}%`;
+                progressText.textContent = `${answeredQuestions} of ${totalQuestions} questions answered`;
+            }
+            
+            function startTimer() {
+                let timeRemaining = 30 * 60; // 30 minutes in seconds
+                const timerDisplay = document.getElementById('time-remaining');
+                
+                const timer = setInterval(function() {
+                    timeRemaining--;
+                    
+                    if (timeRemaining <= 0) {
+                        clearInterval(timer);
+                        alert('Time is up! Your assessment will be submitted automatically.');
+                        // In a real implementation, this would submit the assessment
+                    }
+                    
+                    const minutes = Math.floor(timeRemaining / 60);
+                    const seconds = timeRemaining % 60;
+                    
+                    timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+            
+            // Submit assessment
+            submitButton.addEventListener('click', function() {
+                const answeredQuestions = document.querySelectorAll('.question-nav-item.answered').length;
+                const totalQuestions = navItems.length;
+                
+                if (answeredQuestions < totalQuestions) {
+                    if (!confirm(`You have only answered ${answeredQuestions} of ${totalQuestions} questions. Are you sure you want to submit?`)) {
+                        return;
+                    }
+                }
+                
+                alert('Assessment submitted successfully! Redirecting to results page...');
+                window.location.href = '/assessment/results.html';
+            });
+        });
+    </script>
+</body>
+</html>

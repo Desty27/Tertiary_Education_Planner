@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Planner - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="curriculum.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="curriculum.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/" class="active">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html" class="active">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Curriculum Planner</h1>
+        <p>Design comprehensive curriculum plans aligned with educational standards</p>
+    </header>
+
+    <main>
+        <section class="planner-container">
+            <aside class="planner-sidebar">
+                <h2>Curriculum Settings</h2>
+                
+                <div class="form-group">
+                    <label for="curriculum-title">Curriculum Title</label>
+                    <input type="text" id="curriculum-title" value="Mathematics Year 5" placeholder="Enter curriculum title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="curriculum-subject">Subject</label>
+                    <select id="curriculum-subject">
+                        <option value="mathematics" selected>Mathematics</option>
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="art">Art</option>
+                        <option value="music">Music</option>
+                        <option value="physical-education">Physical Education</option>
+                        <option value="computing">Computing</option>
+                        <option value="languages">Languages</option>
+                        <option value="religious-education">Religious Education</option>
+                        <option value="pshe">PSHE</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="curriculum-key-stage">Key Stage</label>
+                    <select id="curriculum-key-stage">
+                        <option value="early-years">Early Years (3-5)</option>
+                        <option value="key-stage-1">Key Stage 1 (5-7)</option>
+                        <option value="key-stage-2" selected>Key Stage 2 (7-11)</option>
+                        <option value="key-stage-3">Key Stage 3 (11-14)</option>
+                        <option value="key-stage-4">Key Stage 4 (14-16)</option>
+                        <option value="post-16">Post-16 (16+)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="curriculum-year">Year Group</label>
+                    <select id="curriculum-year">
+                        <option value="year-1">Year 1</option>
+                        <option value="year-2">Year 2</option>
+                        <option value="year-3">Year 3</option>
+                        <option value="year-4">Year 4</option>
+                        <option value="year-5" selected>Year 5</option>
+                        <option value="year-6">Year 6</option>
+                        <option value="year-7">Year 7</option>
+                        <option value="year-8">Year 8</option>
+                        <option value="year-9">Year 9</option>
+                        <option value="year-10">Year 10</option>
+                        <option value="year-11">Year 11</option>
+                        <option value="year-12">Year 12</option>
+                        <option value="year-13">Year 13</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="curriculum-academic-year">Academic Year</label>
+                    <select id="curriculum-academic-year">
+                        <option value="2024-2025" selected>2024-2025</option>
+                        <option value="2025-2026">2025-2026</option>
+                        <option value="2026-2027">2026-2027</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="curriculum-terms">Number of Terms</label>
+                    <select id="curriculum-terms">
+                        <option value="2">2 Terms</option>
+                        <option value="3" selected>3 Terms</option>
+                        <option value="4">4 Terms</option>
+                        <option value="6">6 Terms</option>
+                    </select>
+                </div>
+                
+                <button class="button ai-generate-button">
+                    <span class="ai-icon">AI</span>
+                    Generate Curriculum Plan
+                </button>
+            </aside>
+            
+            <div class="planner-main">
+                <div class="planner-actions">
+                    <button class="button save-plan-button">Save Plan</button>
+                    <button class="button export-plan-button">Export Plan</button>
+                    <button class="button button-secondary">Add Unit</button>
+                    <button class="button button-secondary">Add Term</button>
+                </div>
+                
+                <div class="curriculum-map">
+                    <div class="term-section">
+                        <div class="term-header">Autumn Term</div>
+                        <div class="units-container">
+                            <div class="unit-row" draggable="true" data-unit-id="number-place-value">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Number and Place Value</div>
+                                    <div class="unit-details">3 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Understand place value, read and write numbers, compare and order numbers</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Formative quizzes, end of unit test</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="number-place-value">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="unit-row" draggable="true" data-unit-id="addition-subtraction">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Addition and Subtraction</div>
+                                    <div class="unit-details">4 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Add and subtract numbers, solve problems using addition and subtraction</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Problem-solving tasks, end of unit test</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="addition-subtraction">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="unit-row" draggable="true" data-unit-id="geometry-shapes">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Geometry: Properties of Shapes</div>
+                                    <div class="unit-details">3 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Identify and describe 2D and 3D shapes, compare and classify shapes</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Practical assessment, shape project</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="geometry-shapes">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-section">
+                        <div class="term-header">Spring Term</div>
+                        <div class="units-container">
+                            <div class="unit-row" draggable="true" data-unit-id="multiplication-division">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Multiplication and Division</div>
+                                    <div class="unit-details">4 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Recall multiplication facts, multiply and divide numbers, solve problems</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Times tables test, problem-solving assessment</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="multiplication-division">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="unit-row" draggable="true" data-unit-id="fractions">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Fractions</div>
+                                    <div class="unit-details">3 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Recognize and use fractions, compare and order fractions, add and subtract fractions</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Fractions quiz, end of unit test</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="fractions">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="unit-row" draggable="true" data-unit-id="measurement">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Measurement</div>
+                                    <div class="unit-details">3 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Measure and compare lengths, mass, volume, and time</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Practical measurement tasks, end of unit assessment</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="measurement">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="term-section">
+                        <div class="term-header">Summer Term</div>
+                        <div class="units-container">
+                            <div class="unit-row" draggable="true" data-unit-id="statistics">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Statistics</div>
+                                    <div class="unit-details">3 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Interpret and present data, solve problems using information in charts and graphs</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Data collection project, interpretation tasks</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="statistics">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="unit-row" draggable="true" data-unit-id="position-direction">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Position and Direction</div>
+                                    <div class="unit-details">2 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Describe position, direction, and movement, including rotation</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">Practical navigation tasks, coordinate grid assessment</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="position-direction">Edit</button>
+                                </div>
+                            </div>
+                            
+                            <div class="unit-row" draggable="true" data-unit-id="problem-solving">
+                                <div class="unit-cell unit-title-cell">
+                                    <div class="unit-title">Problem Solving and Review</div>
+                                    <div class="unit-details">4 weeks</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-objectives">Apply mathematical knowledge to solve problems, review key concepts</div>
+                                </div>
+                                <div class="unit-cell">
+                                    <div class="unit-assessments">End of year assessment, problem-solving project</div>
+                                </div>
+                                <div class="unit-cell unit-actions">
+                                    <button class="edit-unit-button" data-unit-id="problem-solving">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Unit Edit Modal (hidden by default) -->
+        <div id="unit-edit-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Edit Unit</h2>
+                <form id="unit-edit-form">
+                    <div class="form-group">
+                        <label for="unit-title">Unit Title</label>
+                        <input type="text" id="unit-title" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit-duration">Duration (weeks)</label>
+                        <input type="number" id="unit-duration" name="duration" min="1" max="12" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit-objectives">Learning Objectives</label>
+                        <textarea id="unit-objectives" name="objectives" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit-assessments">Assessment Methods</label>
+                        <textarea id="unit-assessments" name="assessments" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit-resources">Resources</label>
+                        <textarea id="unit-resources" name="resources" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit-standards">Curriculum Standards</label>
+                        <select id="unit-standards" name="standards" multiple>
+                            <option value="ma-5-1">MA 5.1: Read, write, order and compare numbers to at least 1,000,000</option>
+                            <option value="ma-5-2">MA 5.2: Count forwards or backwards in steps of powers of 10</option>
+                            <option value="ma-5-3">MA 5.3: Interpret negative numbers in context</option>
+                            <option value="ma-5-4">MA 5.4: Round any number up to 1,000,000 to the nearest 10, 100, 1,000, 10,000 and 100,000</option>
+                            <option value="ma-5-5">MA 5.5: Solve number problems and practical problems</option>
+                            <option value="ma-5-6">MA 5.6: Read Roman numerals to 1,000 (M)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="button-secondary" id="cancel-edit">Cancel</button>
+                        <button type="submit" class="button">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

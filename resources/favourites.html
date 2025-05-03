@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourites - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="resources.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="resources.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/" class="active">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html" class="active">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>My Favourites</h1>
+        <p>Access your saved educational resources</p>
+    </header>
+
+    <main>
+        <section class="favourites-controls">
+            <div class="favourites-actions">
+                <div class="search-container">
+                    <input type="text" id="favourites-search" placeholder="Search your favourites...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div class="sort-container">
+                    <label for="sort-favourites">Sort by:</label>
+                    <select id="sort-favourites">
+                        <option value="date-added-desc">Date Added (Newest First)</option>
+                        <option value="date-added-asc">Date Added (Oldest First)</option>
+                        <option value="title-asc">Title (A-Z)</option>
+                        <option value="title-desc">Title (Z-A)</option>
+                        <option value="subject">Subject</option>
+                        <option value="type">Resource Type</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="collection-tabs">
+                <button class="collection-tab active" data-collection="all">All Favourites</button>
+                <button class="collection-tab" data-collection="recent">Recently Added</button>
+                <button class="collection-tab" data-collection="collections">My Collections</button>
+                <button class="create-collection-button">+ Create Collection</button>
+            </div>
+        </section>
+
+        <section class="resources-grid">
+            <!-- Favourite resource cards will be dynamically generated here -->
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/math-fractions.jpg" alt="Mathematics Fractions">
+                </div>
+                <div class="resource-details">
+                    <h3>Understanding Fractions: A Comprehensive Guide</h3>
+                    <p class="resource-meta">Mathematics | Key Stage 2 | Lesson Plan</p>
+                    <p class="resource-description">A comprehensive guide to teaching fractions to Key Stage 2 students, including visual aids, practical activities, and assessment tools.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary remove-favourite">Remove from Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/science-ecosystems.jpg" alt="Ecosystems">
+                </div>
+                <div class="resource-details">
+                    <h3>Exploring Ecosystems: Interactive Learning Module</h3>
+                    <p class="resource-meta">Science | Key Stage 3 | Presentation</p>
+                    <p class="resource-description">An interactive presentation on ecosystems, including food webs, energy transfer, and human impact. Includes embedded videos and discussion prompts.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary remove-favourite">Remove from Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/early-years-phonics.jpg" alt="Phonics">
+                </div>
+                <div class="resource-details">
+                    <h3>Phonics Fun: Interactive Activities for Early Readers</h3>
+                    <p class="resource-meta">English | Early Years | Activity</p>
+                    <p class="resource-description">A collection of interactive phonics activities designed for early years learners, including games, songs, and visual aids to support early reading development.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary remove-favourite">Remove from Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-thumbnail">
+                    <img src="../images/resources/history-tudors.jpg" alt="Tudor Period">
+                </div>
+                <div class="resource-details">
+                    <h3>The Tudor Period: Primary Source Analysis</h3>
+                    <p class="resource-meta">History | Key Stage 4 | Worksheet</p>
+                    <p class="resource-description">A collection of primary sources from the Tudor period with guided analysis questions and historical context. Ideal for developing critical thinking skills.</p>
+                    <div class="resource-actions">
+                        <button class="button-secondary remove-favourite">Remove from Favourites</button>
+                        <a href="#" class="button">View Resource</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="empty-state" style="display: none;">
+            <div class="empty-state-content">
+                <div class="empty-icon">📚</div>
+                <h2>No favourites yet</h2>
+                <p>You haven't added any resources to your favourites yet. Browse the Resource Library and click "Add to Favourites" on resources you'd like to save for later.</p>
+                <a href="/resources/library.html" class="button">Browse Resources</a>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-button" disabled>Previous</button>
+            <span class="pagination-info">Page 1 of 1</span>
+            <button class="pagination-button" disabled>Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Collection Creation Modal -->
+    <div id="collection-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create New Collection</h2>
+            <form id="collection-form">
+                <div class="form-group">
+                    <label for="collection-name">Collection Name *</label>
+                    <input type="text" id="collection-name" name="name" required placeholder="Enter a name for your collection">
+                </div>
+                <div class="form-group">
+                    <label for="collection-description">Description (optional)</label>
+                    <textarea id="collection-description" name="description" rows="3" placeholder="Describe the purpose of this collection"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="collection-private" name="private">
+                    <label for="collection-private">Make this collection private</label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="button-secondary cancel-button">Cancel</button>
+                    <button type="submit" class="button">Create Collection</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Additional styles specific to the favourites page */
+        .favourites-controls {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .favourites-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-container {
+            display: flex;
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .sort-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sort-container label {
+            margin-right: 0.5rem;
+            margin-bottom: 0;
+        }
+        
+        .collection-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+        
+        .collection-tab {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+            position: relative;
+        }
+        
+        .collection-tab.active {
+            color: #4a6cf7;
+        }
+        
+        .collection-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #4a6cf7;
+        }
+        
+        .create-collection-button {
+            margin-left: auto;
+            background-color: transparent;
+            border: 1px solid #4a6cf7;
+            color: #4a6cf7;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .create-collection-button:hover {
+            background-color: #f0f4ff;
+        }
+        
+        .remove-favourite {
+            background-color: #f8d7da;
+            border: 1px solid #f5c2c7;
+            color: #842029;
+        }
+        
+        .remove-favourite:hover {
+            background-color: #f5c2c7;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .empty-state-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .empty-state p {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .favourites-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-container {
+                max-width: none;
+                margin-bottom: 1rem;
+            }
+            
+            .collection-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .collection-tab {
+                flex: 1;
+                text-align: center;
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .create-collection-button {
+                width: 100%;
+                margin-top: 1rem;
+                margin-left: 0;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collection tabs functionality
+            const collectionTabs = document.querySelectorAll('.collection-tab');
+            const resourcesGrid = document.querySelector('.resources-grid');
+            const emptyState = document.querySelector('.empty-state');
+            
+            collectionTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    collectionTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    const collection = this.dataset.collection;
+                    
+                    // In a real implementation, this would fetch the resources for the selected collection
+                    // For demo purposes, we'll just show/hide the empty state for the "collections" tab
+                    if (collection === 'collections') {
+                        resourcesGrid.style.display = 'none';
+                        emptyState.style.display = 'block';
+                    } else {
+                        resourcesGrid.style.display = 'grid';
+                        emptyState.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Collection modal functionality
+            const createCollectionButton = document.querySelector('.create-collection-button');
+            const collectionModal = document.getElementById('collection-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const cancelButton = document.querySelector('.cancel-button');
+            const collectionForm = document.getElementById('collection-form');
+            
+            function openModal() {
+                collectionModal.style.display = 'flex';
+            }
+            
+            function closeModalFunc() {
+                collectionModal.style.display = 'none';
+                collectionForm.reset();
+            }
+            
+            if (createCollectionButton) {
+                createCollectionButton.addEventListener('click', openModal);
+            }
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', closeModalFunc);
+            }
+            
+            if (cancelButton) {
+                cancelButton.addEventListener('click', closeModalFunc);
+            }
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === collectionModal) {
+                    closeModalFunc();
+                }
+            });
+            
+            // Collection form submission
+            if (collectionForm) {
+                collectionForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const collectionName = document.getElementById('collection-name').value;
+                    const collectionDescription = document.getElementById('collection-description').value;
+                    const isPrivate = document.getElementById('collection-private').checked;
+                    
+                    console.log('Creating collection:', {
+                        name: collectionName,
+                        description: collectionDescription,
+                        private: isPrivate
+                    });
+                    
+                    // In a real implementation, this would make an API call to create the collection
+                    // For demo purposes, show a success message and close the modal
+                    alert(`Collection "${collectionName}" created successfully!`);
+                    closeModalFunc();
+                    
+                    // Switch to the collections tab
+                    document.querySelector('[data-collection="collections"]').click();
+                });
+            }
+            
+            // Remove favourite functionality
+            const removeFavouriteButtons = document.querySelectorAll('.remove-favourite');
+            
+            removeFavouriteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const resourceCard = this.closest('.resource-card');
+                    const resourceTitle = resourceCard.querySelector('h3').textContent;
+                    
+                    if (confirm(`Are you sure you want to remove "${resourceTitle}" from your favourites?`)) {
+                        // In a real implementation, this would make an API call to remove the favourite
+                        // For demo purposes, just remove the card with animation
+                        resourceCard.style.opacity = '0';
+                        resourceCard.style.transform = 'scale(0.8)';
+                        
+                        setTimeout(() => {
+                            resourceCard.remove();
+                            
+                            // Check if there are any resources left
+                            const remainingCards = document.querySelectorAll('.resource-card');
+                            if (remainingCards.length === 0) {
+                                resourcesGrid.style.display = 'none';
+                                emptyState.style.display = 'block';
+                            }
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Add transition styles for resource cards
+            const style = document.createElement('style');
+            style.textContent = `
+                .resource-card {
+                    transition: opacity 0.3s, transform 0.3s;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

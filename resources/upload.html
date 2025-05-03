@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resources - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="resources.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="resources.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/" class="active">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html" class="active">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Upload Resources</h1>
+        <p>Share your educational resources with the EdPsych Connect community</p>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <div class="upload-container">
+                <form id="resource-upload-form" class="upload-form">
+                    <div class="form-group">
+                        <label for="resource-title">Resource Title *</label>
+                        <input type="text" id="resource-title" name="title" required placeholder="Enter a descriptive title for your resource">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resource-description">Description *</label>
+                        <textarea id="resource-description" name="description" rows="4" required placeholder="Provide a detailed description of your resource"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resource-subject">Subject *</label>
+                            <select id="resource-subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="english">English</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                                <option value="geography">Geography</option>
+                                <option value="art">Art</option>
+                                <option value="music">Music</option>
+                                <option value="physical-education">Physical Education</option>
+                                <option value="computing">Computing</option>
+                                <option value="languages">Languages</option>
+                                <option value="religious-education">Religious Education</option>
+                                <option value="pshe">PSHE</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="resource-age">Age Group *</label>
+                            <select id="resource-age" name="age" required>
+                                <option value="">Select an age group</option>
+                                <option value="early-years">Early Years (3-5)</option>
+                                <option value="key-stage-1">Key Stage 1 (5-7)</option>
+                                <option value="key-stage-2">Key Stage 2 (7-11)</option>
+                                <option value="key-stage-3">Key Stage 3 (11-14)</option>
+                                <option value="key-stage-4">Key Stage 4 (14-16)</option>
+                                <option value="post-16">Post-16 (16+)</option>
+                                <option value="all-ages">All Ages</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resource-type">Resource Type *</label>
+                            <select id="resource-type" name="type" required>
+                                <option value="">Select a resource type</option>
+                                <option value="lesson-plan">Lesson Plan</option>
+                                <option value="worksheet">Worksheet</option>
+                                <option value="presentation">Presentation</option>
+                                <option value="assessment">Assessment</option>
+                                <option value="activity">Activity</option>
+                                <option value="video">Video</option>
+                                <option value="research">Research Paper</option>
+                                <option value="guide">Teaching Guide</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="resource-license">License *</label>
+                            <select id="resource-license" name="license" required>
+                                <option value="">Select a license</option>
+                                <option value="cc-by">Creative Commons Attribution (CC BY)</option>
+                                <option value="cc-by-sa">Creative Commons Attribution-ShareAlike (CC BY-SA)</option>
+                                <option value="cc-by-nc">Creative Commons Attribution-NonCommercial (CC BY-NC)</option>
+                                <option value="cc-by-nc-sa">Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)</option>
+                                <option value="cc-by-nd">Creative Commons Attribution-NoDerivs (CC BY-ND)</option>
+                                <option value="cc-by-nc-nd">Creative Commons Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)</option>
+                                <option value="cc0">Creative Commons Zero (CC0)</option>
+                                <option value="all-rights-reserved">All Rights Reserved</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resource-tags">Tags (comma separated)</label>
+                        <input type="text" id="resource-tags" name="tags" placeholder="e.g., fractions, interactive, group work">
+                    </div>
+                    
+                    <div class="form-group file-upload-group">
+                        <label for="resource-file">Upload File *</label>
+                        <div class="file-upload-container">
+                            <input type="file" id="resource-file" name="file" required>
+                            <div class="file-upload-button">
+                                <span>Choose File</span>
+                            </div>
+                            <div class="file-name">No file chosen</div>
+                        </div>
+                        <div class="file-info">
+                            <p>Maximum file size: 50MB</p>
+                            <p>Supported formats: PDF, DOCX, PPTX, XLSX, ZIP, MP4, JPG, PNG</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resource-thumbnail">Thumbnail Image (optional)</label>
+                        <div class="file-upload-container">
+                            <input type="file" id="resource-thumbnail" name="thumbnail" accept="image/*">
+                            <div class="file-upload-button">
+                                <span>Choose Image</span>
+                            </div>
+                            <div class="thumbnail-name">No image chosen</div>
+                        </div>
+                        <div class="file-info">
+                            <p>Recommended size: 800x450 pixels</p>
+                            <p>Supported formats: JPG, PNG</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="resource-terms" name="terms" required>
+                        <label for="resource-terms">I confirm that I have the right to share this resource and that it does not violate any copyright or intellectual property laws. *</label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="button-secondary" id="preview-button">Preview</button>
+                        <button type="submit" class="button">Upload Resource</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <section class="upload-guidelines">
+            <h2>Resource Upload Guidelines</h2>
+            <div class="guidelines-content">
+                <div class="guideline-item">
+                    <h3>Quality Standards</h3>
+                    <p>All resources should be well-structured, error-free, and provide clear educational value. Resources should include clear objectives, instructions, and where applicable, answer keys or teacher notes.</p>
+                </div>
+                
+                <div class="guideline-item">
+                    <h3>Copyright and Licensing</h3>
+                    <p>Only upload resources that you have created or have explicit permission to share. Properly attribute any third-party content used within your resources. Choose an appropriate license to specify how others can use your resource.</p>
+                </div>
+                
+                <div class="guideline-item">
+                    <h3>Accessibility</h3>
+                    <p>Make your resources accessible to all learners. Use clear fonts, provide alt text for images, and ensure good color contrast. Consider providing alternative formats for different learning needs.</p>
+                </div>
+                
+                <div class="guideline-item">
+                    <h3>Metadata and Discoverability</h3>
+                    <p>Provide accurate and detailed information about your resource, including a descriptive title, comprehensive description, appropriate subject and age group classifications, and relevant tags to help others find your resource.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles specific to the upload page */
+        .upload-section {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .upload-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+        
+        .file-upload-group {
+            margin-bottom: 2rem;
+        }
+        
+        .file-upload-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .file-upload-button {
+            background-color: #4a6cf7;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-right: 1rem;
+        }
+        
+        .file-name,
+        .thumbnail-name {
+            color: #666;
+        }
+        
+        .file-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .file-info p {
+            margin: 0.2rem 0;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.3rem;
+            margin-right: 0.75rem;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .upload-guidelines {
+            margin-top: 3rem;
+        }
+        
+        .guidelines-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .guideline-item {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .guideline-item h3 {
+            color: #4a6cf7;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .guideline-item p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .guidelines-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .form-actions button {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        // Additional script for file upload UI
+        document.addEventListener('DOMContentLoaded', function() {
+            const resourceFile = document.getElementById('resource-file');
+            const fileName = document.querySelector('.file-name');
+            const resourceThumbnail = document.getElementById('resource-thumbnail');
+            const thumbnailName = document.querySelector('.thumbnail-name');
+            const previewButton = document.getElementById('preview-button');
+            const uploadForm = document.getElementById('resource-upload-form');
+            
+            // Update file name display when file is selected
+            if (resourceFile) {
+                resourceFile.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        fileName.textContent = this.files[0].name;
+                    } else {
+                        fileName.textContent = 'No file chosen';
+                    }
+                });
+            }
+            
+            // Update thumbnail name display when image is selected
+            if (resourceThumbnail) {
+                resourceThumbnail.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        thumbnailName.textContent = this.files[0].name;
+                    } else {
+                        thumbnailName.textContent = 'No image chosen';
+                    }
+                });
+            }
+            
+            // Preview functionality (simplified for demo)
+            if (previewButton) {
+                previewButton.addEventListener('click', function() {
+                    // In a real implementation, this would generate a preview
+                    alert('Preview functionality would be implemented here.');
+                });
+            }
+            
+            // Form submission
+            if (uploadForm) {
+                uploadForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real implementation, this would submit the form data to an API
+                    // For demo purposes, show a success message
+                    alert('Thank you for your submission! Your resource has been uploaded successfully.');
+                    
+                    // Reset the form
+                    uploadForm.reset();
+                    fileName.textContent = 'No file chosen';
+                    thumbnailName.textContent = 'No image chosen';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

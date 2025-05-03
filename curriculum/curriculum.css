@@ -1,0 +1,585 @@
+/* 
+ * EdPsych Connect Platform
+ * Curriculum Section Styles
+ */
+
+/* Hero Section */
+.hero-header {
+    background-color: #4a6cf7;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button-secondary {
+    background-color: white;
+    color: #4a6cf7;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.section-header p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Feature Cards */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background-color: #e6ecff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-placeholder {
+    width: 35px;
+    height: 35px;
+    background-color: #4a6cf7;
+    border-radius: 50%;
+}
+
+.feature-card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.feature-card p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.feature-list {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.feature-card .button {
+    width: 100%;
+    text-align: center;
+}
+
+/* AI Personalization Section */
+.ai-personalization {
+    background-color: #f0f4ff;
+    padding: 3rem 2rem;
+    margin-bottom: 4rem;
+    border-radius: 8px;
+}
+
+.personalization-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.personalization-image {
+    flex: 1;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+.personalization-details {
+    flex: 1;
+}
+
+.personalization-details h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.personalization-details p {
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.personalization-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.personalization-feature h4 {
+    color: #4a6cf7;
+    margin-bottom: 0.5rem;
+}
+
+.personalization-feature p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Curriculum Templates */
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.template-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.template-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.template-badge {
+    background-color: #e6ecff;
+    color: #4a6cf7;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.template-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    min-height: 4.5rem;
+}
+
+.template-card .button {
+    width: 100%;
+    text-align: center;
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Collaboration Section */
+.collaboration-section {
+    margin-bottom: 4rem;
+}
+
+.collaboration-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.collaboration-feature {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.collaboration-feature .feature-icon {
+    margin-bottom: 1.5rem;
+}
+
+.collaboration-feature h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.collaboration-feature p {
+    color: #666;
+}
+
+.cta-container {
+    text-align: center;
+}
+
+/* Curriculum Planner Specific Styles */
+.planner-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.planner-sidebar {
+    width: 300px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.planner-main {
+    flex: 1;
+}
+
+.planner-actions {
+    margin-bottom: 2rem;
+}
+
+.planner-actions .button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.curriculum-map {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.term-header {
+    background-color: #4a6cf7;
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+}
+
+.unit-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.unit-row:last-child {
+    border-bottom: none;
+}
+
+.unit-cell {
+    flex: 1;
+    padding: 1rem;
+    border-right: 1px solid #eee;
+}
+
+.unit-cell:last-child {
+    border-right: none;
+}
+
+.unit-title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.unit-details {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Standards Browser Specific Styles */
+.standards-browser {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.standards-sidebar {
+    width: 300px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.standards-main {
+    flex: 1;
+}
+
+.standards-search {
+    margin-bottom: 1.5rem;
+}
+
+.standards-search input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.standards-category {
+    margin-bottom: 1rem;
+}
+
+.standards-category-header {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.standards-subcategory {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.standards-subcategory a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.standards-subcategory a:hover {
+    color: #4a6cf7;
+}
+
+.standards-list {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.standard-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.standard-item:last-child {
+    border-bottom: none;
+}
+
+.standard-code {
+    font-weight: 500;
+    color: #4a6cf7;
+    margin-bottom: 0.5rem;
+}
+
+.standard-description {
+    margin-bottom: 1rem;
+}
+
+.standard-meta {
+    display: flex;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.standard-meta-item {
+    margin-right: 1.5rem;
+}
+
+/* Lesson Planning Specific Styles */
+.lesson-form {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.lesson-preview {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: white;
+}
+
+.lesson-header {
+    margin-bottom: 2rem;
+}
+
+.lesson-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.lesson-meta {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.lesson-section {
+    margin-bottom: 2rem;
+}
+
+.lesson-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid #4a6cf7;
+}
+
+.activity-title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.activity-description {
+    color: #555;
+}
+
+.activity-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-actions {
+        flex-direction: column;
+    }
+    
+    .hero-actions .button {
+        width: 100%;
+    }
+    
+    .personalization-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .personalization-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .planner-container,
+    .standards-browser {
+        flex-direction: column;
+    }
+    
+    .planner-sidebar,
+    .standards-sidebar {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Standards - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="curriculum.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="curriculum.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/" class="active">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html" class="active">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>UK Curriculum Standards</h1>
+        <p>Browse and search comprehensive UK educational standards across all subjects and key stages</p>
+    </header>
+
+    <main>
+        <section class="standards-browser">
+            <aside class="standards-sidebar">
+                <div class="standards-search">
+                    <input type="text" placeholder="Search standards..." id="standards-search-input">
+                </div>
+                
+                <div class="standards-filters">
+                    <div class="form-group">
+                        <label for="subject-filter">Subject</label>
+                        <select id="subject-filter">
+                            <option value="">All Subjects</option>
+                            <option value="mathematics" selected>Mathematics</option>
+                            <option value="english">English</option>
+                            <option value="science">Science</option>
+                            <option value="history">History</option>
+                            <option value="geography">Geography</option>
+                            <option value="art">Art</option>
+                            <option value="music">Music</option>
+                            <option value="physical-education">Physical Education</option>
+                            <option value="computing">Computing</option>
+                            <option value="languages">Languages</option>
+                            <option value="religious-education">Religious Education</option>
+                            <option value="pshe">PSHE</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="key-stage-filter">Key Stage</label>
+                        <select id="key-stage-filter">
+                            <option value="">All Key Stages</option>
+                            <option value="early-years">Early Years (3-5)</option>
+                            <option value="key-stage-1">Key Stage 1 (5-7)</option>
+                            <option value="key-stage-2" selected>Key Stage 2 (7-11)</option>
+                            <option value="key-stage-3">Key Stage 3 (11-14)</option>
+                            <option value="key-stage-4">Key Stage 4 (14-16)</option>
+                            <option value="post-16">Post-16 (16+)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="standards-categories">
+                    <div class="standards-category">
+                        <div class="standards-category-header">Number</div>
+                        <div class="standards-subcategories">
+                            <div class="standards-subcategory"><a href="#" data-category="number-place-value">Number and Place Value</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="addition-subtraction">Addition and Subtraction</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="multiplication-division">Multiplication and Division</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="fractions">Fractions (including decimals and percentages)</a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="standards-category">
+                        <div class="standards-category-header">Measurement</div>
+                        <div class="standards-subcategories">
+                            <div class="standards-subcategory"><a href="#" data-category="measurement-length">Length, height, distance</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="measurement-mass">Mass/weight</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="measurement-capacity">Capacity/volume</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="measurement-time">Time</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="measurement-money">Money</a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="standards-category">
+                        <div class="standards-category-header">Geometry</div>
+                        <div class="standards-subcategories">
+                            <div class="standards-subcategory"><a href="#" data-category="geometry-properties">Properties of shapes</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="geometry-position">Position and direction</a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="standards-category">
+                        <div class="standards-category-header">Statistics</div>
+                        <div class="standards-subcategories">
+                            <div class="standards-subcategory"><a href="#" data-category="statistics-data">Data handling</a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="standards-category">
+                        <div class="standards-category-header">Algebra</div>
+                        <div class="standards-subcategories">
+                            <div class="standards-subcategory"><a href="#" data-category="algebra-patterns">Patterns and sequences</a></div>
+                            <div class="standards-subcategory"><a href="#" data-category="algebra-expressions">Expressions and equations</a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="standards-category">
+                        <div class="standards-category-header">Ratio and Proportion</div>
+                        <div class="standards-subcategories">
+                            <div class="standards-subcategory"><a href="#" data-category="ratio-proportion">Ratio and proportion problems</a></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            
+            <div class="standards-main">
+                <div class="standards-header">
+                    <h2>Mathematics - Key Stage 2 - Number and Place Value</h2>
+                    <div class="standards-actions">
+                        <button class="button-secondary">Export Standards</button>
+                        <button class="button-secondary">Print Standards</button>
+                    </div>
+                </div>
+                
+                <div class="standards-list">
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 5.1</div>
+                        <div class="standard-description">Read, write, order and compare numbers to at least 1,000,000 and determine the value of each digit.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 5</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 5.2</div>
+                        <div class="standard-description">Count forwards or backwards in steps of powers of 10 for any given number up to 1,000,000.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 5</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 5.3</div>
+                        <div class="standard-description">Interpret negative numbers in context, count forwards and backwards with positive and negative whole numbers, including through zero.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 5</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 5.4</div>
+                        <div class="standard-description">Round any number up to 1,000,000 to the nearest 10, 100, 1,000, 10,000 and 100,000.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 5</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 5.5</div>
+                        <div class="standard-description">Solve number problems and practical problems that involve all of the above.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 5</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 5.6</div>
+                        <div class="standard-description">Read Roman numerals to 1,000 (M) and recognise years written in Roman numerals.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 5</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 6.1</div>
+                        <div class="standard-description">Read, write, order and compare numbers up to 10,000,000 and determine the value of each digit.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 6</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 6.2</div>
+                        <div class="standard-description">Round any whole number to a required degree of accuracy.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 6</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 6.3</div>
+                        <div class="standard-description">Use negative numbers in context, and calculate intervals across zero.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 6</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                    
+                    <div class="standard-item" data-subject="mathematics" data-key-stage="key-stage-2">
+                        <div class="standard-code">MA 6.4</div>
+                        <div class="standard-description">Solve number and practical problems that involve all of the above.</div>
+                        <div class="standard-meta">
+                            <div class="standard-meta-item"><span class="standard-meta-label">Year:</span> Year 6</div>
+                            <div class="standard-meta-item"><span class="standard-meta-label">Category:</span> Number and Place Value</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="standards-pagination">
+                    <button class="pagination-button" disabled>Previous</button>
+                    <span class="pagination-info">Page 1 of 1</span>
+                    <button class="pagination-button" disabled>Next</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="standards-integration">
+            <div class="section-header">
+                <h2>Integrate Standards into Your Curriculum</h2>
+                <p>Easily incorporate these standards into your curriculum planning and lesson design</p>
+            </div>
+            
+            <div class="integration-features">
+                <div class="integration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/curriculum.svg" alt="Curriculum Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Curriculum Mapping</h3>
+                    <p>Map standards directly to your curriculum units to ensure comprehensive coverage and alignment.</p>
+                    <a href="/curriculum/planner.html" class="button">Open Curriculum Planner</a>
+                </div>
+                
+                <div class="integration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/lessons.svg" alt="Lessons Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Lesson Planning</h3>
+                    <p>Incorporate specific standards into your lesson plans to ensure targeted instruction and assessment.</p>
+                    <a href="/curriculum/lessons.html" class="button">Create Lesson Plans</a>
+                </div>
+                
+                <div class="integration-feature">
+                    <div class="feature-icon">
+                        <img src="../images/icons/assessment.svg" alt="Assessment Icon" class="icon-placeholder">
+                    </div>
+                    <h3>Standards-Based Assessment</h3>
+                    <p>Create assessments aligned to specific standards to measure student progress and achievement.</p>
+                    <a href="/assessment/create.html" class="button">Create Assessments</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

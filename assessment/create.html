@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Assessment - EdPsych Connect Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="assessment.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="assessment.js" defer></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">EdPsych Connect</span>
+            </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resources/">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/resources/library.html">Resource Library</a>
+                        <a href="/resources/upload.html">Upload Resources</a>
+                        <a href="/resources/favourites.html">My Favourites</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/curriculum/">Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="/curriculum/planner.html">Curriculum Planner</a>
+                        <a href="/curriculum/standards.html">UK Standards</a>
+                        <a href="/curriculum/lessons.html">Lesson Planning</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/assessment/" class="active">Assessment</a>
+                    <div class="dropdown-content">
+                        <a href="/assessment/create.html" class="active">Create Assessment</a>
+                        <a href="/assessment/take.html">Take Assessment</a>
+                        <a href="/assessment/results.html">View Results</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="auth-nav">
+                <!-- This will be dynamically updated by auth.js -->
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Create Assessment</h1>
+        <p>Design customized assessments with a variety of question types and formats</p>
+    </header>
+
+    <main>
+        <section class="assessment-builder">
+            <aside class="builder-sidebar">
+                <h2>Assessment Settings</h2>
+                
+                <div class="form-group">
+                    <label for="assessment-title">Assessment Title</label>
+                    <input type="text" id="assessment-title" value="Mathematics: Place Value Assessment" placeholder="Enter assessment title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-subject">Subject</label>
+                    <select id="assessment-subject">
+                        <option value="mathematics" selected>Mathematics</option>
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="art">Art</option>
+                        <option value="music">Music</option>
+                        <option value="physical-education">Physical Education</option>
+                        <option value="computing">Computing</option>
+                        <option value="languages">Languages</option>
+                        <option value="religious-education">Religious Education</option>
+                        <option value="pshe">PSHE</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-key-stage">Key Stage</label>
+                    <select id="assessment-key-stage">
+                        <option value="early-years">Early Years (3-5)</option>
+                        <option value="key-stage-1">Key Stage 1 (5-7)</option>
+                        <option value="key-stage-2" selected>Key Stage 2 (7-11)</option>
+                        <option value="key-stage-3">Key Stage 3 (11-14)</option>
+                        <option value="key-stage-4">Key Stage 4 (14-16)</option>
+                        <option value="post-16">Post-16 (16+)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-year">Year Group</label>
+                    <select id="assessment-year">
+                        <option value="year-1">Year 1</option>
+                        <option value="year-2">Year 2</option>
+                        <option value="year-3">Year 3</option>
+                        <option value="year-4">Year 4</option>
+                        <option value="year-5" selected>Year 5</option>
+                        <option value="year-6">Year 6</option>
+                        <option value="year-7">Year 7</option>
+                        <option value="year-8">Year 8</option>
+                        <option value="year-9">Year 9</option>
+                        <option value="year-10">Year 10</option>
+                        <option value="year-11">Year 11</option>
+                        <option value="year-12">Year 12</option>
+                        <option value="year-13">Year 13</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-type">Assessment Type</label>
+                    <select id="assessment-type">
+                        <option value="formative" selected>Formative</option>
+                        <option value="summative">Summative</option>
+                        <option value="diagnostic">Diagnostic</option>
+                        <option value="performance">Performance</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-time-limit">Time Limit (minutes)</label>
+                    <input type="number" id="assessment-time-limit" value="30" min="5" max="180">
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-passing-score">Passing Score (%)</label>
+                    <input type="number" id="assessment-passing-score" value="70" min="0" max="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="assessment-instructions">Instructions</label>
+                    <textarea id="assessment-instructions" rows="3" placeholder="Instructions for students taking this assessment">Read each question carefully. Select the best answer for each multiple-choice question. Show your work for all calculations.</textarea>
+                </div>
+                
+                <h3>Question Types</h3>
+                <div class="question-types">
+                    <div class="question-type" data-type="multiple-choice">
+                        <div class="question-type-icon">A</div>
+                        <div class="question-type-label">Multiple Choice</div>
+                    </div>
+                    
+                    <div class="question-type" data-type="true-false">
+                        <div class="question-type-icon">T/F</div>
+                        <div class="question-type-label">True/False</div>
+                    </div>
+                    
+                    <div class="question-type" data-type="short-answer">
+                        <div class="question-type-icon">SA</div>
+                        <div class="question-type-label">Short Answer</div>
+                    </div>
+                    
+                    <div class="question-type" data-type="essay">
+                        <div class="question-type-icon">E</div>
+                        <div class="question-type-label">Essay</div>
+                    </div>
+                    
+                    <div class="question-type" data-type="matching">
+                        <div class="question-type-icon">M</div>
+                        <div class="question-type-label">Matching</div>
+                    </div>
+                </div>
+                
+                <button class="button ai-generate-button generate-questions-button">
+                    <span class="ai-icon">AI</span>
+                    Generate Questions
+                </button>
+            </aside>
+            
+            <div class="builder-main">
+                <div class="builder-actions">
+                    <button class="button save-assessment-button">Save Assessment</button>
+                    <button class="button preview-assessment-button">Preview Assessment</button>
+                    <button class="button button-secondary">Import Questions</button>
+                </div>
+                
+                <div class="question-list">
+                    <div class="question-item">
+                        <div class="question-header">
+                            <div class="question-number">Question 1</div>
+                            <div class="question-actions">
+                                <button class="question-action" data-action="edit" title="Edit Question">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="question-action" data-action="duplicate" title="Duplicate Question">
+                                    <i class="fas fa-copy"></i> Duplicate
+                                </button>
+                                <button class="question-action" data-action="delete" title="Delete Question">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                        <div class="question-content">
+                            <div class="question-text">What is the value of the digit 7 in the number 275,349?</div>
+                            <div class="answer-options">
+                                <div class="answer-option">
+                                    <div class="option-marker">A</div>
+                                    <div class="option-text">7</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker">B</div>
+                                    <div class="option-text">70</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker">C</div>
+                                    <div class="option-text">700</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker correct">D</div>
+                                    <div class="option-text">7,000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-settings">
+                            <div class="settings-header">Question Settings</div>
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <span class="setting-label">Type:</span>
+                                    <span>Multiple Choice</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Points:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Difficulty:</span>
+                                    <span>Medium</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Standards:</span>
+                                    <span>MA 5.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-item">
+                        <div class="question-header">
+                            <div class="question-number">Question 2</div>
+                            <div class="question-actions">
+                                <button class="question-action" data-action="edit" title="Edit Question">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="question-action" data-action="duplicate" title="Duplicate Question">
+                                    <i class="fas fa-copy"></i> Duplicate
+                                </button>
+                                <button class="question-action" data-action="delete" title="Delete Question">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                        <div class="question-content">
+                            <div class="question-text">Order these numbers from smallest to largest: 523,456; 532,654; 523,465; 532,546</div>
+                            <div class="answer-options">
+                                <div class="answer-option">
+                                    <div class="option-marker">A</div>
+                                    <div class="option-text">523,456; 523,465; 532,546; 532,654</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker correct">B</div>
+                                    <div class="option-text">523,456; 523,465; 532,546; 532,654</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker">C</div>
+                                    <div class="option-text">532,654; 532,546; 523,465; 523,456</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker">D</div>
+                                    <div class="option-text">523,465; 523,456; 532,546; 532,654</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-settings">
+                            <div class="settings-header">Question Settings</div>
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <span class="setting-label">Type:</span>
+                                    <span>Multiple Choice</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Points:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Difficulty:</span>
+                                    <span>Medium</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Standards:</span>
+                                    <span>MA 5.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-item">
+                        <div class="question-header">
+                            <div class="question-number">Question 3</div>
+                            <div class="question-actions">
+                                <button class="question-action" data-action="edit" title="Edit Question">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="question-action" data-action="duplicate" title="Duplicate Question">
+                                    <i class="fas fa-copy"></i> Duplicate
+                                </button>
+                                <button class="question-action" data-action="delete" title="Delete Question">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                        <div class="question-content">
+                            <div class="question-text">Round 347,982 to the nearest 10,000.</div>
+                            <div class="answer-field">
+                                <div class="field-placeholder">Short answer text field</div>
+                            </div>
+                            <div class="answer-key">
+                                <div class="key-header">Answer Key:</div>
+                                <div class="key-content">350,000</div>
+                            </div>
+                        </div>
+                        <div class="question-settings">
+                            <div class="settings-header">Question Settings</div>
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <span class="setting-label">Type:</span>
+                                    <span>Short Answer</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Points:</span>
+                                    <span>2</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Difficulty:</span>
+                                    <span>Medium</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Standards:</span>
+                                    <span>MA 5.4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-item">
+                        <div class="question-header">
+                            <div class="question-number">Question 4</div>
+                            <div class="question-actions">
+                                <button class="question-action" data-action="edit" title="Edit Question">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="question-action" data-action="duplicate" title="Duplicate Question">
+                                    <i class="fas fa-copy"></i> Duplicate
+                                </button>
+                                <button class="question-action" data-action="delete" title="Delete Question">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                        <div class="question-content">
+                            <div class="question-text">True or False: The value of the digit 5 in 254,876 is 5,000.</div>
+                            <div class="answer-options">
+                                <div class="answer-option">
+                                    <div class="option-marker correct">A</div>
+                                    <div class="option-text">True</div>
+                                </div>
+                                <div class="answer-option">
+                                    <div class="option-marker">B</div>
+                                    <div class="option-text">False</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-settings">
+                            <div class="settings-header">Question Settings</div>
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <span class="setting-label">Type:</span>
+                                    <span>True/False</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Points:</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Difficulty:</span>
+                                    <span>Easy</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Standards:</span>
+                                    <span>MA 5.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-item">
+                        <div class="question-header">
+                            <div class="question-number">Question 5</div>
+                            <div class="question-actions">
+                                <button class="question-action" data-action="edit" title="Edit Question">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="question-action" data-action="duplicate" title="Duplicate Question">
+                                    <i class="fas fa-copy"></i> Duplicate
+                                </button>
+                                <button class="question-action" data-action="delete" title="Delete Question">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                        <div class="question-content">
+                            <div class="question-text">Explain how to determine the value of a digit in a number based on its position. Use the number 425,368 as an example in your explanation.</div>
+                            <div class="answer-field">
+                                <div class="field-placeholder">Essay response field</div>
+                            </div>
+                            <div class="answer-key">
+                                <div class="key-header">Rubric:</div>
+                                <div class="key-content">
+                                    <p><strong>3 points:</strong> Correctly explains place value system, mentions that the value depends on position, and accurately identifies the value of each digit in 425,368.</p>
+                                    <p><strong>2 points:</strong> Explains place value system with minor errors or incomplete explanation of digit values in the example.</p>
+                                    <p><strong>1 point:</strong> Basic understanding of place value but significant errors in explanation or example.</p>
+                                    <p><strong>0 points:</strong> Incorrect or no explanation of place value system.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-settings">
+                            <div class="settings-header">Question Settings</div>
+                            <div class="settings-grid">
+                                <div class="setting-item">
+                                    <span class="setting-label">Type:</span>
+                                    <span>Essay</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Points:</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Difficulty:</span>
+                                    <span>Hard</span>
+                                </div>
+                                <div class="setting-item">
+                                    <span class="setting-label">Standards:</span>
+                                    <span>MA 5.1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EdPsych Connect</h3>
+                <p>Transforming education through AI-powered personalisation and innovative tools for educators and students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources/">Resources</a></li>
+                    <li><a href="/curriculum/">Curriculum</a></li>
+                    <li><a href="/assessment/">Assessment</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@edpsychconnect.com</p>
+                <p>Phone: +44 (0)123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EdPsych Connect Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
